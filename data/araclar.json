@@ -1,0 +1,13 @@
+{
+    "bmw320i-001": {
+        "baslik": "2020 BMW 3.20i Sport Line",
+        "fiyat": "850.000",
+        "yil": "2020",
+        "km": "45.000",
+        "yakit": "Benzin",
+        "vites": "Otomatik",
+        "foto": "/static/bmw320i.jpg",
+        "telefon": "905551234567",
+        "aciklama": "Full bakımlı, kazasız, boyasız. Garanti devam ediyor."
+    }
+}

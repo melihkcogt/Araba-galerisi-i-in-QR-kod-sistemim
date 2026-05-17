@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ arac.marka }} {{ arac.model }} - Araç Detayları</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="arac-hero">
+            <img src="{{ arac.foto }}" alt="{{ arac.marka }} {{ arac.model }}">
+            <div class="hero-overlay">
+                <span class="badge">{{ arac.yil }}</span>
+            </div>
+        </div>
+
+        <div class="arac-info">
+            <div class="price-tag">💰 {{ arac.fiyat }}</div>
+            <h1>{{ arac.marka }} {{ arac.model }}</h1>
+            
+            <div class="specs-grid">
+                <div class="spec-box">
+                    <span class="spec-icon">🛣️</span>
+                    <span class="spec-label">Kilometre</span>
+                    <span class="spec-value">{{ arac.km }}</span>
+                </div>
+                <div class="spec-box">
+                    <span class="spec-icon">⛽</span>
+                    <span class="spec-label">Yakıt</span>
+                    <span class="spec-value">{{ arac.yakit }}</span>
+                </div>
+                <div class="spec-box">
+                    <span class="spec-icon">⚙️</span>
+                    <span class="spec-label">Vites</span>
+                    <span class="spec-value">{{ arac.vites }}</span>
+                </div>
+                <div class="spec-box">
+                    <span class="spec-icon">🎨</span>
+                    <span class="spec-label">Renk</span>
+                    <span class="spec-value">{{ arac.renk }}</span>
+                </div>
+            </div>
+
+            <div class="aciklama">
+                <h3>📋 Açıklama</h3>
+                <p>{{ arac.aciklama or "Araç hakkında detaylı bilgi için bizimle iletişime geçin." }}</p>
+            </div>
+
+            <div class="galeri-bilgi">
+                <h3>🏢 Galeri Bilgileri</h3>
+                <p>📍 Konum: İstanbul, Türkiye</p>
+                <p>📞 Telefon: {{ arac.telefon }}</p>
+            </div>
+
+            <a href="https://wa.me/{{ arac.telefon | replace(' ', '') | replace('-', '') }}?text=Merhaba,%20{{ arac.marka }}%20{{ arac.model }}%20hakkında%20bilgi%20almak%20istiyorum" 
+               class="whatsapp-btn" target="_blank">
+                📱 WhatsApp'tan Bilgi Al
+            </a>
+
+            <a href="tel:{{ arac.telefon }}" class="call-btn">
+                📞 Hemen Ara
+            </a>
+        </div>
+    </div>
+</body>
+</html>
